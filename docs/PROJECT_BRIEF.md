@@ -7,7 +7,7 @@
 
 ## Goal
 
-Separate concerns: sensing/detection interface, policy rules, and audit evidence — the pattern used in real compliance systems.
+Separate concerns: sensing/detection interface, policy rules, and audit evidence.
 
 ## Prototype vs future
 

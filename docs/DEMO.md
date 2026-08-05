@@ -12,10 +12,3 @@ Decision: ALLOW ...
 Decision: PENALTY_PATH / REVIEW ...
 Logged: yes (SQLite)
 ```
-
-```mermaid
-flowchart LR
-  IN[Input] --> DET[Detector]
-  DET --> RULES[Rules]
-  RULES --> LOG[SQLite audit]
-```

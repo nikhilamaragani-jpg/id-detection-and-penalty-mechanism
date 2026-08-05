@@ -14,5 +14,5 @@ python src/main.py
 ## Questions
 
 **False positives?** Prefer warnings + human review before hard penalties.  
-**Privacy?** Minimize retention of face/ID images; encrypt and restrict access if extended.  
+**Privacy?** Minimize retention of face/ID images if extended.  
 **Prototype honesty?** Scenarios are simulated; live CV models are future work.

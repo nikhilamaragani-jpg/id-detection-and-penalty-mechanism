@@ -1,4 +1,4 @@
-# Recommended GitHub About metadata
+# GitHub About
 
 **Homepage:** https://nikhilamaragani-jpg.github.io/  
-**Topics:** `python` `computer-vision` `automation` `compliance` `opencv`
+**Topics:** `python` `computer-vision` `automation` `compliance`

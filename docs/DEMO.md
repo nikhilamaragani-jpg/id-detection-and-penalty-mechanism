@@ -1,16 +1,21 @@
-# Demo Walkthrough — ID Detection & Penalty
+# Demo walkthrough
+
+```bash
+pip install -r requirements.txt
+python src/main.py
+```
 
 ```text
-Detection result received
-Rules engine decision: ALLOW / WARNING / PENALTY
-Decision logged to SQLite for audit
+--- Case: Valid ID present ---
+Decision: ALLOW ...
+--- Case: Missing / unclear ID ---
+Decision: PENALTY_PATH / REVIEW ...
+Logged: yes (SQLite)
 ```
 
 ```mermaid
 flowchart LR
-  IN[Image / Detection Input] --> DET[Detector]
-  DET --> RULES[Rules Engine]
-  RULES --> DEC{Decision}
-  DEC --> LOG[(SQLite Audit)]
-  DEC --> ALERT[Alert concept]
+  IN[Input] --> DET[Detector]
+  DET --> RULES[Rules]
+  RULES --> LOG[SQLite audit]
 ```

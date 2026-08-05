@@ -1,83 +1,110 @@
+<div align="center">
+
 # ID Card Detection and Penalty Mechanism
 
-**B.Tech Project** | Computer Vision | Automated Compliance | Security Workflow
+### B.Tech Project · Computer Vision Concepts · Automated Compliance
 
-A prototype that models ID card presence detection, decision rules, and automated penalty/logging workflows. The full project scope includes real-time camera capture, face detection, ID card localization, and alert mechanisms.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-Concepts-5C3EE8?logo=opencv&logoColor=white)](https://opencv.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Runnable%20Workflow-success)](https://github.com/nikhilamaragani-jpg/id-detection-and-penalty-mechanism)
 
----
+**Author:** Amaragani Nikhil Sai  
+**Domain:** Security · Access control · Detection + enforcement automation
 
-## Overview
+[Run](#quick-start) · [Architecture](#system-architecture) · [Skills](#skills-recruiters-care-about) · [Docs](docs/PROJECT_BRIEF.md)
 
-Identification systems are critical for security and compliance. This project demonstrates:
-
-1. Input analysis (image / detection result)
-2. Detection outcome generation
-3. Rule-based compliance decision (valid / missing / mismatch)
-4. Penalty action modeling + SQLite logging for audit
-
-**Status:** Runnable decision + logging prototype  
-**Full Project Scope (from documentation):** Haar Cascade face detection, YOLOv5-style ID card detection, face recognition matching, and SMTP email alerts for violations
+</div>
 
 ---
 
-## System Architecture (Aligned with Project Report)
+## Executive Summary (for recruiters)
+
+Organizations need reliable ways to verify identity presence and respond consistently when rules are broken (missing ID, invalid ID, repeated violations).
+
+This project models a **detection → decision → penalty → audit** pipeline:
+
+1. Capture / analyze an input detection outcome  
+2. Apply compliance rules  
+3. Produce a clear decision (allow / warn / penalty)  
+4. Persist an audit trail in SQLite  
+
+The full documentation explores modern ID detection (optical, RFID/NFC, biometrics, AI forgery detection) and automated penalty mechanisms used in access-control and regulated environments.
+
+---
+
+## Problem Statement
+
+| Operational need | Project response |
+|------------------|------------------|
+| Manual ID checks are slow / inconsistent | Automated decision workflow |
+| Violations need fair, repeatable handling | Rule-based penalty engine |
+| Security teams need evidence | Decision logging |
+| Systems must evolve toward CV/AI | Architecture ready for OpenCV / YOLO-style modules |
+
+---
+
+## System Architecture
 
 ```text
-Camera / Image Input
-        |
-        v
-+---------------------------+
-| Detection Module          |  Face + ID card presence (prototype / CV concept)
-+---------------------------+
-        |
-        v
-+---------------------------+
-| Recognition / Matching    |  Identity verification logic
-+---------------------------+
-        |
-        v
-+---------------------------+
-| Rules / Penalty Engine    |  Decision: warning / penalty / allow
-+---------------------------+
-        |
-        v
-+---------------------------+
-| Logging + Alert Layer     |  SQLite audit + (concept) email notification
-+---------------------------+
+Camera / Image / Detection Input
+              |
+              v
+┌─────────────────────────────┐
+│ Detection Module            │  Face / ID presence (concept + interface)
+└─────────────────────────────┘
+              |
+              v
+┌─────────────────────────────┐
+│ Matching / Recognition      │  Identity consistency checks (concept)
+└─────────────────────────────┘
+              |
+              v
+┌─────────────────────────────┐
+│ Rules / Penalty Engine      │  warning · penalty · allow
+└─────────────────────────────┘
+              |
+              v
+┌─────────────────────────────┐
+│ Logging + Alerts            │  SQLite audit · email alert concept
+└─────────────────────────────┘
 ```
 
-State-chart style flow from the report covers: initialize → capture → detect face/ID → recognize → decide → send alert if needed.
+**Full scope concepts:** Haar Cascade face detection · YOLO-style ID card detection · face recognition matching · SMTP violation alerts · real-time camera loop.
 
 ---
 
 ## Tech Stack
 
-| Area              | Technology / Concept                     |
-|-------------------|------------------------------------------|
-| Language          | Python 3                                 |
-| Vision Concepts   | OpenCV, Haar Cascade, YOLO-style detection |
-| Decision Logic    | Rule engine                              |
-| Storage           | SQLite                                   |
-| Alerts (scope)    | SMTP / email notifications               |
+| Area | Technology / concept |
+|------|----------------------|
+| Language | Python 3 |
+| Vision | OpenCV concepts, Haar / YOLO-style detection |
+| Decisioning | Rule engine |
+| Storage | SQLite |
+| Alerts | SMTP / email (scope) |
 
 ---
 
-## Project Structure
+## Repository Structure
 
 ```text
 id-detection-and-penalty-mechanism/
+├── docs/
+│   └── PROJECT_BRIEF.md
 ├── src/
-│   ├── main.py         # Workflow entry
-│   ├── detector.py     # Detection result simulation / interface
-│   ├── rules.py        # Compliance & penalty rules
-│   └── database.py     # SQLite decision logging
+│   ├── main.py
+│   ├── detector.py
+│   ├── rules.py
+│   └── database.py
 ├── requirements.txt
+├── LICENSE
 └── README.md
 ```
 
 ---
 
-## How to Run
+## Quick Start
 
 ```bash
 git clone https://github.com/nikhilamaragani-jpg/id-detection-and-penalty-mechanism.git
@@ -88,29 +115,40 @@ python src/main.py
 
 ---
 
-## Current Status vs Full Scope
+## Implementation Status
 
-- [x] Problem definition & workflow modeling
+- [x] Problem framing for ID compliance automation
 - [x] Detection result → rules → decision pipeline
-- [x] SQLite logging of outcomes
-- [ ] Real OpenCV / YOLOv5 model integration
-- [ ] Live camera + face recognition pipeline
-- [ ] SMTP alert implementation
+- [x] SQLite audit logging
+- [ ] Live OpenCV / YOLOv5 model integration
+- [ ] Camera streaming + face recognition pipeline
+- [ ] SMTP alert delivery
+
+---
+
+## Skills Recruiters Care About
+
+| Skill | Evidence |
+|-------|----------|
+| Automation thinking | Rules + penalties as system design |
+| CV / detection awareness | Architecture prepared for vision models |
+| Compliance workflows | Escalating enforcement logic |
+| Auditability | Logged decisions |
+| Clean engineering | Modular `src/`, runnable demo |
 
 ---
 
 ## Author
 
 **Amaragani Nikhil Sai**  
-B.Tech in Computer Science and Engineering  
-Sri Indu Institute of Engineering and Technology
+B.Tech CSE · Intelligent detection systems
 
 - GitHub: [nikhilamaragani-jpg](https://github.com/nikhilamaragani-jpg)
-- LinkedIn: [Amaragani Nikhil Sai](https://linkedin.com/in/amaraganinikhilsai)
+- LinkedIn: [nikhil-sai-amaragani](https://www.linkedin.com/in/nikhil-sai-amaragani-219115382)
 - Email: nikhilamaragani@gmail.com
 
 ---
 
 ## License
 
-MIT License
+MIT License — see [LICENSE](LICENSE).

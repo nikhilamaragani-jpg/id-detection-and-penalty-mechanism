@@ -3,6 +3,11 @@ ID Card Detection and Penalty Mechanism
 Academic Prototype
 """
 
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from detector import basic_image_check
 from rules import apply_penalty_rule
 
@@ -12,7 +17,6 @@ def main():
     print("ID Detection & Penalty Mechanism - Prototype")
     print("=" * 50)
 
-    # Demo flow (replace with real image processing later)
     sample_result = basic_image_check("sample_image.jpg")
     decision = apply_penalty_rule(sample_result)
 

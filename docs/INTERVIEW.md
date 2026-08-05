@@ -1,18 +1,6 @@
-# Project walkthrough — ID Detection & Penalty
+# Interview
 
-## 60-second summary
+**Pitch:** Compliance-style ID workflow with a rules engine and full audit trail; detector is an interface so real CV can be swapped in.
 
-I modeled an automated ID compliance workflow: detection results feed a rules engine that produces allow/warning/review/penalty-path decisions and logs every outcome to SQLite. The architecture is ready for real computer-vision modules later.
-
-## Demo
-
-```bash
-pip install -r requirements.txt
-python src/main.py
-```
-
-## Questions
-
-**False positives?** Prefer warnings + human review before hard penalties.  
-**Privacy?** Minimize retention of face/ID images if extended.  
-**Prototype honesty?** Scenarios are simulated; live CV models are future work.
+**False positives?** Prefer REVIEW before hard penalties.  
+**Privacy?** Minimize image retention when extending to real cameras.

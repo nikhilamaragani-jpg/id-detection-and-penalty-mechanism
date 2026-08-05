@@ -1,4 +1,4 @@
-# Resume bullets — ID Detection & Penalty
+# Resume bullets
 
-- Designed an ID detection and penalty workflow linking detection outcomes to rule-based decisions and audit logging.  
-- Implemented a modular Python prototype with multi-scenario demos and SQLite decision history.  
+- Designed an ID verification workflow linking detection outcomes to rule-based decisions and SQLite audit logging.  
+- Implemented a modular Python prototype with multi-scenario demos and a CV-ready detector interface.  

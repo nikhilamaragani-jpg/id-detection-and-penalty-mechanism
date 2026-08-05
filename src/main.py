@@ -1,6 +1,6 @@
 """
-ID Card Detection and Penalty Mechanism
-Prototype: detect → decide → log
+ID Detection and Penalty Mechanism
+Portfolio workflow: detect → decide → log
 """
 
 import sys
@@ -16,7 +16,7 @@ from database import init_db, log_detection
 
 def banner() -> None:
     print("=" * 60)
-    print("  ID Detection & Penalty Mechanism  |  Portfolio Prototype")
+    print("  ID Detection & Penalty Mechanism  |  Portfolio Workflow")
     print("  Detect · Rules · Decision · Audit log")
     print("=" * 60)
 
@@ -75,7 +75,6 @@ def main() -> None:
         run_case(label, path, simulated)
 
     print("\nDone. Architecture ready for OpenCV/YOLO + alert integrations.")
-    print("See docs/INTERVIEW.md for recruiter walkthrough.")
 
 
 if __name__ == "__main__":

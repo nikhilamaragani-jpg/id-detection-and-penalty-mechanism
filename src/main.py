@@ -5,6 +5,7 @@ Prototype: detect → decide → log
 
 import sys
 import os
+from typing import Dict, Optional
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,7 +21,7 @@ def banner() -> None:
     print("=" * 60)
 
 
-def run_case(label: str, image_path: str, simulated: dict | None = None) -> None:
+def run_case(label: str, image_path: str, simulated: Optional[Dict] = None) -> None:
     print(f"\n--- Case: {label} ---")
     if simulated is None:
         result = basic_image_check(image_path)
@@ -35,7 +36,10 @@ def run_case(label: str, image_path: str, simulated: dict | None = None) -> None
         confidence=float(result.get("confidence", 0.0)),
         decision=decision,
     )
-    print(f"Detection : id_detected={result.get('id_detected')} confidence={result.get('confidence')}")
+    print(
+        f"Detection : id_detected={result.get('id_detected')} "
+        f"confidence={result.get('confidence')}"
+    )
     print(f"Decision  : {decision}")
     print("Logged    : yes (SQLite audit)")
 
@@ -44,7 +48,6 @@ def main() -> None:
     banner()
     init_db()
 
-    # Demo scenarios for interviews (simulated outcomes + default detector path)
     cases = [
         (
             "Valid ID present (high confidence)",

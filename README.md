@@ -1,61 +1,72 @@
 # ID Card Detection and Penalty Mechanism
 
-**B.Tech Project** | Computer Vision | Object Detection | Automation Concept
+**B.Tech Project** | Computer Vision | Compliance Automation Concept
 
-An academic project exploring computer vision techniques for detecting ID cards and designing a conceptual penalty/compliance mechanism.
+A prototype that demonstrates how ID detection results can be connected to simple compliance rules and stored in a database for review.
 
 ---
 
 ## Overview
 
-This project focuses on the idea of using computer vision to identify ID cards in images or video frames and supporting a basic rule-based compliance workflow.
+This project models a basic workflow:
 
-**Project Type:** Academic / Concept + Prototype  
-**Status:** Architecture and basic structure ready
+1. Analyze an input image reference
+2. Produce a detection result
+3. Apply a rule-based decision
+4. Log the outcome in SQLite
+
+**Project Type:** Academic Prototype  
+**Status:** Runnable decision workflow with database logging
 
 ---
 
-## Problem Statement
+## Architecture
 
-Manual monitoring of ID-related compliance can be time-consuming and inconsistent. This project explores how computer vision can assist in detecting ID cards and supporting automated checks.
-
----
-
-## Key Concepts Covered
-
-- Computer vision fundamentals
-- Object detection concepts
-- Image processing with OpenCV
-- Designing a simple rule-based system
-- Modular project structure
+```text
+Image Input (path/reference)
+            |
+            v
++--------------------+
+| Detection Module   |  (prototype detection result)
++--------------------+
+            |
+            v
++--------------------+
+| Rules Engine       |  (compliance / penalty decision)
++--------------------+
+            |
+            v
++--------------------+
+| SQLite Database    |  (stores detection decisions)
++--------------------+
+```
 
 ---
 
 ## Tech Stack
 
-| Area              | Technologies          |
-|-------------------|-----------------------|
-| Language          | Python                |
-| Computer Vision   | OpenCV                |
-| Core Concepts     | Image processing, detection logic |
-| Tools             | Git, Jupyter          |
+| Area | Technology |
+|------|------------|
+| Language | Python |
+| Vision Concept | OpenCV-oriented design |
+| Storage | SQLite |
+| Tools | Git |
 
 ---
 
 ## Project Structure
 
-```
+```text
 id-detection-and-penalty-mechanism/
-━━ README.md
-━━ requirements.txt
-━━ .gitignore
-━━ LICENSE
-━━ src/
+├── README.md
+├── requirements.txt
+├── data/
+├── src/
 │   ├── main.py
 │   ├── detector.py
-│   └── rules.py
-━━ data/
-━━ notebooks/
+│   ├── rules.py
+│   └── database.py
+└── LICENSE
 ```
 
 ---
@@ -68,8 +79,8 @@ cd id-detection-and-penalty-mechanism
 
 python -m venv venv
 source venv/bin/activate
-
 pip install -r requirements.txt
+
 python src/main.py
 ```
 
@@ -78,39 +89,20 @@ python src/main.py
 ## Current Status
 
 - [x] Problem definition
-- [x] High-level design
-- [x] Repository structure
-- [x] Basic detection and rules modules
-- [ ] Advanced detection model integration
-- [ ] Full end-to-end pipeline
-
----
-
-## Learning Outcomes
-
-- Understanding computer vision workflows
-- Working with OpenCV
-- Designing modular Python projects
-- Connecting detection logic with simple business rules
-
----
-
-## Future Improvements
-
-- Integrate a proper object detection model
-- Add sample images for testing
-- Improve rule engine
-- Build a simple demo interface
+- [x] Detection + rules workflow
+- [x] SQLite decision logging
+- [ ] Real OpenCV/YOLO model integration
+- [ ] Image dataset demos
 
 ---
 
 ## Author
 
 **Amaragani Nikhil Sai**  
-B.Tech in Computer Science and Engineering  
+B.Tech in Computer Science and Engineering
 
-- GitHub: [nikhilamaragani-jpg](https://github.com/nikhilamaragani-jpg)  
-- LinkedIn: [Amaragani Nikhil Sai](https://linkedin.com/in/amaraganinikhilsai)  
+- GitHub: [nikhilamaragani-jpg](https://github.com/nikhilamaragani-jpg)
+- LinkedIn: [Amaragani Nikhil Sai](https://linkedin.com/in/amaraganinikhilsai)
 - Email: nikhilamaragani@gmail.com
 
 ---

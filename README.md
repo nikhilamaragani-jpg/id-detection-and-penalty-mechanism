@@ -7,100 +7,20 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-Concepts-5C3EE8?logo=opencv&logoColor=white)](https://opencv.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Runnable%20Workflow-success)](https://github.com/nikhilamaragani-jpg/id-detection-and-penalty-mechanism)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Website-5b8cff)](https://nikhilamaragani-jpg.github.io/portfolio/)
 
 **Author:** Amaragani Nikhil Sai  
 **Domain:** Security · Access control · Detection + enforcement automation
 
-[Run](#quick-start) · [Architecture](#system-architecture) · [Skills](#skills-recruiters-care-about) · [Docs](docs/PROJECT_BRIEF.md)
+[Run](#quick-start) · [Interview](docs/INTERVIEW.md) · [Demo](docs/DEMO.md) · [Report](docs/REPORT_SUMMARY.md) · [Resume bullets](docs/RESUME_BULLETS.md)
 
 </div>
 
 ---
 
-## Executive Summary (for recruiters)
+## Executive Summary
 
-Organizations need reliable ways to verify identity presence and respond consistently when rules are broken (missing ID, invalid ID, repeated violations).
-
-This project models a **detection → decision → penalty → audit** pipeline:
-
-1. Capture / analyze an input detection outcome  
-2. Apply compliance rules  
-3. Produce a clear decision (allow / warn / penalty)  
-4. Persist an audit trail in SQLite  
-
-The full documentation explores modern ID detection (optical, RFID/NFC, biometrics, AI forgery detection) and automated penalty mechanisms used in access-control and regulated environments.
-
----
-
-## Problem Statement
-
-| Operational need | Project response |
-|------------------|------------------|
-| Manual ID checks are slow / inconsistent | Automated decision workflow |
-| Violations need fair, repeatable handling | Rule-based penalty engine |
-| Security teams need evidence | Decision logging |
-| Systems must evolve toward CV/AI | Architecture ready for OpenCV / YOLO-style modules |
-
----
-
-## System Architecture
-
-```text
-Camera / Image / Detection Input
-              |
-              v
-┌─────────────────────────────┐
-│ Detection Module            │  Face / ID presence (concept + interface)
-└─────────────────────────────┘
-              |
-              v
-┌─────────────────────────────┐
-│ Matching / Recognition      │  Identity consistency checks (concept)
-└─────────────────────────────┘
-              |
-              v
-┌─────────────────────────────┐
-│ Rules / Penalty Engine      │  warning · penalty · allow
-└─────────────────────────────┘
-              |
-              v
-┌─────────────────────────────┐
-│ Logging + Alerts            │  SQLite audit · email alert concept
-└─────────────────────────────┘
-```
-
-**Full scope concepts:** Haar Cascade face detection · YOLO-style ID card detection · face recognition matching · SMTP violation alerts · real-time camera loop.
-
----
-
-## Tech Stack
-
-| Area | Technology / concept |
-|------|----------------------|
-| Language | Python 3 |
-| Vision | OpenCV concepts, Haar / YOLO-style detection |
-| Decisioning | Rule engine |
-| Storage | SQLite |
-| Alerts | SMTP / email (scope) |
-
----
-
-## Repository Structure
-
-```text
-id-detection-and-penalty-mechanism/
-├── docs/
-│   └── PROJECT_BRIEF.md
-├── src/
-│   ├── main.py
-│   ├── detector.py
-│   ├── rules.py
-│   └── database.py
-├── requirements.txt
-├── LICENSE
-└── README.md
-```
+Organizations need reliable identity checks and consistent enforcement. This project models a **detection → rules → penalty → audit** pipeline with modular Python components and multi-scenario demo cases for interviews.
 
 ---
 
@@ -115,40 +35,32 @@ python src/main.py
 
 ---
 
-## Implementation Status
+## Documentation suite
 
-- [x] Problem framing for ID compliance automation
-- [x] Detection result → rules → decision pipeline
+| Doc | Purpose |
+|-----|---------|
+| [INTERVIEW.md](docs/INTERVIEW.md) | Pitch, fairness/privacy Q&A |
+| [DEMO.md](docs/DEMO.md) | Walkthrough + architecture |
+| [REPORT_SUMMARY.md](docs/REPORT_SUMMARY.md) | Academic themes condensed |
+| [RESUME_BULLETS.md](docs/RESUME_BULLETS.md) | Copy-ready bullets |
+| [CONTRIBUTING.md](docs/CONTRIBUTING.md) | Dev notes |
+| [PROJECT_BRIEF.md](docs/PROJECT_BRIEF.md) | Hiring-manager brief |
+
+---
+
+## Implementation status
+
+- [x] Detection interface + multi-scenario simulation
+- [x] Rules / penalty decisioning
 - [x] SQLite audit logging
-- [ ] Live OpenCV / YOLOv5 model integration
-- [ ] Camera streaming + face recognition pipeline
-- [ ] SMTP alert delivery
-
----
-
-## Skills Recruiters Care About
-
-| Skill | Evidence |
-|-------|----------|
-| Automation thinking | Rules + penalties as system design |
-| CV / detection awareness | Architecture prepared for vision models |
-| Compliance workflows | Escalating enforcement logic |
-| Auditability | Logged decisions |
-| Clean engineering | Modular `src/`, runnable demo |
-
----
+- [ ] Live OpenCV / YOLOv5 integration
+- [ ] Camera stream + face recognition
+- [ ] SMTP alerts
 
 ## Author
 
-**Amaragani Nikhil Sai**  
-B.Tech CSE · Intelligent detection systems
-
-- GitHub: [nikhilamaragani-jpg](https://github.com/nikhilamaragani-jpg)
-- LinkedIn: [nikhil-sai-amaragani](https://www.linkedin.com/in/nikhil-sai-amaragani-219115382)
-- Email: nikhilamaragani@gmail.com
-
----
+**Amaragani Nikhil Sai** · https://nikhilamaragani-jpg.github.io/portfolio/  
+LinkedIn: https://www.linkedin.com/in/nikhil-sai-amaragani-219115382 · Email: nikhilamaragani@gmail.com
 
 ## License
-
-MIT License — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE).

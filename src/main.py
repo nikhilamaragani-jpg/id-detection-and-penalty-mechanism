@@ -8,9 +8,9 @@ import os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from detector import detect_id_status
-from rules import decide_action
-from database import init_db, log_decision
+from detector import basic_image_check
+from rules import apply_penalty_rule
+from database import init_db, log_detection
 
 
 def banner() -> None:
@@ -20,12 +20,22 @@ def banner() -> None:
     print("=" * 60)
 
 
-def run_case(label: str, payload: dict) -> None:
+def run_case(label: str, image_path: str, simulated: dict | None = None) -> None:
     print(f"\n--- Case: {label} ---")
-    status = detect_id_status(payload)
-    decision = decide_action(status)
-    log_decision(status, decision)
-    print(f"Detection : {status}")
+    if simulated is None:
+        result = basic_image_check(image_path)
+    else:
+        result = simulated
+        print(f"Checking image: {image_path} (simulated scenario)")
+
+    decision = apply_penalty_rule(result)
+    log_detection(
+        image_path=image_path,
+        id_detected=bool(result.get("id_detected")),
+        confidence=float(result.get("confidence", 0.0)),
+        decision=decision,
+    )
+    print(f"Detection : id_detected={result.get('id_detected')} confidence={result.get('confidence')}")
     print(f"Decision  : {decision}")
     print("Logged    : yes (SQLite audit)")
 
@@ -34,26 +44,32 @@ def main() -> None:
     banner()
     init_db()
 
-    # Demonstrates multiple policy outcomes for interview walkthroughs
+    # Demo scenarios for interviews (simulated outcomes + default detector path)
     cases = [
-        ("Valid ID present", {"face_detected": True, "id_detected": True, "match": True}),
-        ("Missing ID", {"face_detected": True, "id_detected": False, "match": False}),
-        ("ID mismatch", {"face_detected": True, "id_detected": True, "match": False}),
-        ("No person detected", {"face_detected": False, "id_detected": False, "match": False}),
+        (
+            "Valid ID present (high confidence)",
+            "samples/valid_id.jpg",
+            {"id_detected": True, "confidence": 0.91, "notes": "Simulated valid ID"},
+        ),
+        (
+            "Missing / unclear ID (low confidence)",
+            "samples/missing_id.jpg",
+            {"id_detected": False, "confidence": 0.22, "notes": "Simulated missing ID"},
+        ),
+        (
+            "Borderline detection (manual review)",
+            "samples/borderline.jpg",
+            {"id_detected": True, "confidence": 0.55, "notes": "Simulated borderline"},
+        ),
+        (
+            "Default detector path",
+            "samples/camera_frame.jpg",
+            None,
+        ),
     ]
 
-    for label, payload in cases:
-        try:
-            run_case(label, payload)
-        except TypeError:
-            # Fallback if detector API expects different signature
-            status = detect_id_status()
-            decision = decide_action(status)
-            log_decision(status, decision)
-            print(f"\n--- Case: {label} (fallback interface) ---")
-            print(f"Detection : {status}")
-            print(f"Decision  : {decision}")
-            break
+    for label, path, simulated in cases:
+        run_case(label, path, simulated)
 
     print("\nDone. Architecture ready for OpenCV/YOLO + alert integrations.")
     print("See docs/INTERVIEW.md for recruiter walkthrough.")

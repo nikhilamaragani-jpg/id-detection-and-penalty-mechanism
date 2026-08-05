@@ -1,12 +1,24 @@
 """
-Simple rule-based penalty / compliance logic
+Rule-based penalty / compliance logic for ID detection outcomes.
 """
+
 
 def apply_penalty_rule(detection_result: dict) -> str:
     """
-    Applies a basic rule based on detection output.
+    Apply basic compliance rules based on detection output.
+
+    Policy (prototype):
+    - High-confidence ID present  -> allow / no penalty
+    - ID missing or low confidence -> flag for review / warning path
+    - Mid confidence               -> manual review
     """
-    if detection_result.get("id_detected") and detection_result.get("confidence", 0) > 0.7:
-        return "ID detected with sufficient confidence. No penalty triggered (prototype)."
-    else:
-        return "ID not clearly detected. Flag for manual review (prototype)."
+    detected = bool(detection_result.get("id_detected"))
+    confidence = float(detection_result.get("confidence", 0.0))
+
+    if detected and confidence >= 0.8:
+        return "ALLOW — ID detected with high confidence. No penalty."
+    if detected and confidence >= 0.6:
+        return "WARNING — Borderline confidence. Flag for manual review."
+    if detected:
+        return "REVIEW — ID signal weak. Escalate to security review."
+    return "PENALTY_PATH — ID not clearly detected. Trigger compliance workflow (prototype)."

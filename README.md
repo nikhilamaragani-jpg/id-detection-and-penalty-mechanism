@@ -1,56 +1,64 @@
 # ID Card Detection and Penalty Mechanism
 
-**B.Tech Project** | Computer Vision | Compliance Automation Concept
+**B.Tech Project** | Computer Vision | Automated Compliance | Security Workflow
 
-A prototype that demonstrates how ID detection results can be connected to simple compliance rules and stored in a database for review.
+A prototype that models ID card presence detection, decision rules, and automated penalty/logging workflows. The full project scope includes real-time camera capture, face detection, ID card localization, and alert mechanisms.
 
 ---
 
 ## Overview
 
-This project models a basic workflow:
+Identification systems are critical for security and compliance. This project demonstrates:
 
-1. Analyze an input image reference
-2. Produce a detection result
-3. Apply a rule-based decision
-4. Log the outcome in SQLite
+1. Input analysis (image / detection result)
+2. Detection outcome generation
+3. Rule-based compliance decision (valid / missing / mismatch)
+4. Penalty action modeling + SQLite logging for audit
 
-**Project Type:** Academic Prototype  
-**Status:** Runnable decision workflow with database logging
+**Status:** Runnable decision + logging prototype  
+**Full Project Scope (from documentation):** Haar Cascade face detection, YOLOv5-style ID card detection, face recognition matching, and SMTP email alerts for violations
 
 ---
 
-## Architecture
+## System Architecture (Aligned with Project Report)
 
 ```text
-Image Input (path/reference)
-            |
-            v
-+--------------------+
-| Detection Module   |  (prototype detection result)
-+--------------------+
-            |
-            v
-+--------------------+
-| Rules Engine       |  (compliance / penalty decision)
-+--------------------+
-            |
-            v
-+--------------------+
-| SQLite Database    |  (stores detection decisions)
-+--------------------+
+Camera / Image Input
+        |
+        v
++---------------------------+
+| Detection Module          |  Face + ID card presence (prototype / CV concept)
++---------------------------+
+        |
+        v
++---------------------------+
+| Recognition / Matching    |  Identity verification logic
++---------------------------+
+        |
+        v
++---------------------------+
+| Rules / Penalty Engine    |  Decision: warning / penalty / allow
++---------------------------+
+        |
+        v
++---------------------------+
+| Logging + Alert Layer     |  SQLite audit + (concept) email notification
++---------------------------+
 ```
+
+State-chart style flow from the report covers: initialize → capture → detect face/ID → recognize → decide → send alert if needed.
 
 ---
 
 ## Tech Stack
 
-| Area | Technology |
-|------|------------|
-| Language | Python |
-| Vision Concept | OpenCV-oriented design |
-| Storage | SQLite |
-| Tools | Git |
+| Area              | Technology / Concept                     |
+|-------------------|------------------------------------------|
+| Language          | Python 3                                 |
+| Vision Concepts   | OpenCV, Haar Cascade, YOLO-style detection |
+| Decision Logic    | Rule engine                              |
+| Storage           | SQLite                                   |
+| Alerts (scope)    | SMTP / email notifications               |
 
 ---
 
@@ -58,15 +66,13 @@ Image Input (path/reference)
 
 ```text
 id-detection-and-penalty-mechanism/
-├── README.md
-├── requirements.txt
-├── data/
 ├── src/
-│   ├── main.py
-│   ├── detector.py
-│   ├── rules.py
-│   └── database.py
-└── LICENSE
+│   ├── main.py         # Workflow entry
+│   ├── detector.py     # Detection result simulation / interface
+│   ├── rules.py        # Compliance & penalty rules
+│   └── database.py     # SQLite decision logging
+├── requirements.txt
+└── README.md
 ```
 
 ---
@@ -76,30 +82,28 @@ id-detection-and-penalty-mechanism/
 ```bash
 git clone https://github.com/nikhilamaragani-jpg/id-detection-and-penalty-mechanism.git
 cd id-detection-and-penalty-mechanism
-
-python -m venv venv
-source venv/bin/activate
 pip install -r requirements.txt
-
 python src/main.py
 ```
 
 ---
 
-## Current Status
+## Current Status vs Full Scope
 
-- [x] Problem definition
-- [x] Detection + rules workflow
-- [x] SQLite decision logging
-- [ ] Real OpenCV/YOLO model integration
-- [ ] Image dataset demos
+- [x] Problem definition & workflow modeling
+- [x] Detection result → rules → decision pipeline
+- [x] SQLite logging of outcomes
+- [ ] Real OpenCV / YOLOv5 model integration
+- [ ] Live camera + face recognition pipeline
+- [ ] SMTP alert implementation
 
 ---
 
 ## Author
 
 **Amaragani Nikhil Sai**  
-B.Tech in Computer Science and Engineering
+B.Tech in Computer Science and Engineering  
+Sri Indu Institute of Engineering and Technology
 
 - GitHub: [nikhilamaragani-jpg](https://github.com/nikhilamaragani-jpg)
 - LinkedIn: [Amaragani Nikhil Sai](https://linkedin.com/in/amaraganinikhilsai)

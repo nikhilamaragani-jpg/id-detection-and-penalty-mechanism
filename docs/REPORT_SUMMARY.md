@@ -21,3 +21,12 @@
 **Note:** One local PDF filename references another student name; treat this GitHub repo as **your modular engineering portfolio** of the ID + penalty workflow idea. Do not over-claim sole authorship of every page of shared academic material.
 
 Live OpenCV/YOLO camera pipelines remain **roadmap**, not claimed as shipped here.
+
+## Reference PDF
+
+[Download reference document (PDF)](reports/ID_Detection_and_Penalty_Reference_Document.pdf)
+
+## Attribution
+
+This repository is a modular engineering portfolio of the ID detection and penalty workflow. The uploaded PDF is academic reference material; if it was collaborative coursework, treat code ownership as your portfolio implementation of the detect-rules-audit design.
+

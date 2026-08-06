@@ -17,6 +17,9 @@ Academic themes: [docs/REPORT_SUMMARY.md](docs/REPORT_SUMMARY.md)
 
 ---
 
+![Report cover](images/report_cover.svg)
+
+
 ## Problem
 
 ID checks need consistent, auditable outcomes when identity documents are present, missing, or unclear — and policy responses (warnings, review, penalties) must be structured.
@@ -61,3 +64,8 @@ pytest -q
 ## License
 
 MIT · **Author:** Amaragani Nikhil Sai · https://nikhilamaragani-jpg.github.io/
+
+### Academic report PDF
+
+- **Reference PDF:** [docs/reports/ID_Detection_and_Penalty_Reference_Document.pdf](docs/reports/ID_Detection_and_Penalty_Reference_Document.pdf)
+

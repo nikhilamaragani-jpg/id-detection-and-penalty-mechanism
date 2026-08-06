@@ -8,8 +8,10 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](Dockerfile)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Amaragani Nikhil Sai** · B.Tech CSE · SIIET (JNTUH)  
-Simulated detection scenarios today; OpenCV/YOLO-ready interface for later.
+**Amaragani Nikhil Sai** · B.Tech CSE · SIIET (JNTUH)
+
+Simulated detection today; OpenCV/YOLO-ready interface later.  
+Academic themes: [docs/REPORT_SUMMARY.md](docs/REPORT_SUMMARY.md)
 
 </div>
 
@@ -17,23 +19,13 @@ Simulated detection scenarios today; OpenCV/YOLO-ready interface for later.
 
 ## Problem
 
-Identity checks need consistent, auditable outcomes when IDs are present, missing, or uncertain.
+ID checks need consistent, auditable outcomes when identity documents are present, missing, or unclear — and policy responses (warnings, review, penalties) must be structured.
 
 ---
 
 ## Solution
 
-A modular **detect → rules → decide → audit** pipeline with a pluggable detection interface.
-
----
-
-## Features
-
-- Pluggable detection interface  
-- Confidence-aware rules  
-- Decisions: ALLOW / WARNING / REVIEW / PENALTY_PATH  
-- SQLite audit trail  
-- Docker + CI  
+Modular pipeline: **detection interface → rules / penalty engine → decision → SQLite audit log**.
 
 ---
 
@@ -46,78 +38,26 @@ A modular **detect → rules → decide → audit** pipeline with a pluggable de
 ## Tech stack
 
 Python · rules engine · SQLite · Docker · pytest  
-Roadmap: OpenCV / YOLO, alerts, policy YAML
+Roadmap: OpenCV / YOLO, camera loop, alerts
 
 ---
 
-## Folder structure
-
-```text
-src/ tests/ docs/ data/ images/ scripts/ config/
-Dockerfile docker-compose.yml requirements.txt
-```
-
----
-
-## Installation
+## Installation & usage
 
 ```bash
 git clone https://github.com/nikhilamaragani-jpg/id-detection-and-penalty-mechanism.git
 cd id-detection-and-penalty-mechanism
 pip install -r requirements.txt
-```
-
----
-
-## Usage
-
-```bash
 python src/main.py
 pytest -q
-docker compose up --build
 ```
-
----
-
-## Project workflow
-
-1. Detection result (simulated or model)  
-2. Rules evaluation  
-3. Decision emission  
-4. Audit persistence  
-
----
-
-## Screenshots
-
-[images/architecture.svg](images/architecture.svg) · capture CLI multi-case output to `images/cli_demo.png`.
-
----
-
-## Results
-
-Multi-scenario demo shows policy behavior across confidence bands. Live camera CV not claimed (honest scope).
-
----
-
-## Future improvements
-
-- [ ] YOLO/OpenCV adapter  
-- [ ] Human review path  
-- [ ] Metrics on false-positive cost  
-
----
-
-## Skills demonstrated
-
-Workflow design · policy thinking · modular interfaces · auditability · CV integration planning
 
 ---
 
 ## Documentation
 
-[PROJECT_BRIEF](docs/PROJECT_BRIEF.md) · [DEMO](docs/DEMO.md) · [INTERVIEW](docs/INTERVIEW.md) · [RESUME_BULLETS](docs/RESUME_BULLETS.md)
+[REPORT_SUMMARY](docs/REPORT_SUMMARY.md) · [PROJECT_BRIEF](docs/PROJECT_BRIEF.md) · [DEMO](docs/DEMO.md) · [INTERVIEW](docs/INTERVIEW.md) · [RESUME_BULLETS](docs/RESUME_BULLETS.md)
 
 ## License
 
-MIT · **Author:** Amaragani Nikhil Sai · B.Tech CSE · https://nikhilamaragani-jpg.github.io/
+MIT · **Author:** Amaragani Nikhil Sai · https://nikhilamaragani-jpg.github.io/

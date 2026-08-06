@@ -1,31 +1,23 @@
-# Academic Report Summary — ID Detection & Penalty Mechanism
+# Project documentation summary — ID Detection & Penalty
 
-**Domain:** ID card detection technologies + penalty / compliance mechanisms  
-**Author portfolio mapping:** Amaragani Nikhil Sai
+**Theme (academic paper / notes):** ID card detection mechanisms and penalty frameworks for security, access control, and regulatory compliance.
 
-## Motivation
+## Topics covered in the source document
 
-Identification systems are critical for security, access control, and regulatory compliance across government, banking, transport, healthcare, and events. Detection alone is insufficient — organizations also need consistent **penalty mechanisms** for misuse, missing IDs, or forged credentials.
+- Why ID verification matters (government, banking, transport, healthcare, events)  
+- Detection technologies: optical / barcode / QR, **RFID**, **NFC**, biometrics  
+- Role of **AI / ML** in forgery detection and real-time recognition  
+- Penalty mechanisms for forged, missing, or misused IDs (warnings → legal paths)  
+- Interaction between **detection systems** and **policy / penalty frameworks**  
 
-## Themes covered in documentation
+## Honest mapping to this repository
 
-- Optical scanners, barcodes/QR, RFID/NFC
-- Biometric ID cards and digital IDs
-- AI/ML forgery detection and real-time recognition
-- Automated access penalties, escalating enforcement
-- Privacy, interoperability, cost challenges
-- Future directions: blockchain validation, stronger AI fraud detection, privacy-preserving biometrics
+| Academic / conceptual material | This repository |
+|--------------------------------|-----------------|
+| Survey of ID detection + penalty ideas | Runnable **detect → rules → decision → audit** workflow |
+| Advanced scanners / biometrics / live CV | **Simulated detection scenarios** + pluggable detector interface |
+| Full compliance product | Portfolio prototype for learning modular design |
 
-## Engineering focus in this repository
+**Note:** One local PDF filename references another student name; treat this GitHub repo as **your modular engineering portfolio** of the ID + penalty workflow idea. Do not over-claim sole authorship of every page of shared academic material.
 
-1. Detection interface (pluggable vision models later)
-2. Rules / penalty engine (policy decisions)
-3. Audit log (accountability)
-
-## Full PDF
-
-Place report at:
-
-`docs/reports/ID_DETECTION_AND_PENALTY_MECHANISM.pdf`
-
-(Local source: `OneDrive/Documents/B.TECH PROJECTS/PROJECT ON ID CARD DETECTION...pdf`)
+Live OpenCV/YOLO camera pipelines remain **roadmap**, not claimed as shipped here.

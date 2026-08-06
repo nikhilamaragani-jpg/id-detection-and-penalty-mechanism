@@ -1,14 +1,14 @@
 <div align="center">
 
-# ID Detection & Penalty Workflow
+# ID Detection & Penalty Mechanism
 
-### Production-style Automation Application · Rules · Audit Logging
+### B.Tech Project · Rules Engine · Audit Logging · CV-ready Design
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](Dockerfile)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Amaragani Nikhil Sai** · Portfolio automation system  
+**Amaragani Nikhil Sai** · B.Tech CSE · SIIET (JNTUH)  
 Simulated detection scenarios today; OpenCV/YOLO-ready interface for later.
 
 </div>
@@ -23,7 +23,7 @@ Identity checks need consistent, auditable outcomes when IDs are present, missin
 
 ## Solution
 
-A **production-style automation application**: detect → apply policy rules → emit decision → write audit log.
+A modular **detect → rules → decide → audit** pipeline with a pluggable detection interface.
 
 ---
 
@@ -90,20 +90,20 @@ docker compose up --build
 
 ## Screenshots
 
-[images/architecture.svg](images/architecture.svg) · capture CLI multi-case output to `images/cli_demo.png`
+[images/architecture.svg](images/architecture.svg) · capture CLI multi-case output to `images/cli_demo.png`.
 
 ---
 
 ## Results
 
-Multi-scenario demo shows policy behavior across confidence bands. Live camera CV not claimed.
+Multi-scenario demo shows policy behavior across confidence bands. Live camera CV not claimed (honest scope).
 
 ---
 
 ## Future improvements
 
 - [ ] YOLO/OpenCV adapter  
-- [ ] Human review queue  
+- [ ] Human review path  
 - [ ] Metrics on false-positive cost  
 
 ---
@@ -120,4 +120,4 @@ Workflow design · policy thinking · modular interfaces · auditability · CV i
 
 ## License
 
-MIT · **Author:** Amaragani Nikhil Sai · https://nikhilamaragani-jpg.github.io/
+MIT · **Author:** Amaragani Nikhil Sai · B.Tech CSE · https://nikhilamaragani-jpg.github.io/

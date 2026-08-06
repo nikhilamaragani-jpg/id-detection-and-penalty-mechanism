@@ -1,7 +1,10 @@
 # GitHub About
 
-**Description:** Production-style ID verification workflow | rules engine · audit logging · CV-ready interface
+**Description:**
+B.Tech Project: ID detection & penalty workflow | rules engine · audit logging · CV-ready design
 
-**Homepage:** https://nikhilamaragani-jpg.github.io/
+**Homepage:**
+https://nikhilamaragani-jpg.github.io/
 
-**Topics:** python, computer-vision, automation, rules-engine, compliance, audit-logging, docker
+**Topics:**
+python, computer-vision, automation, rules-engine, audit-logging, docker, btech-project

@@ -1,17 +1,10 @@
-"""
-Basic detection module (placeholder)
-"""
+"""Detection adapter for the ID verification workflow."""
+
 
 def basic_image_check(image_path: str) -> dict:
-    """
-    Placeholder detection function.
-    In a full version, this would use OpenCV / object detection.
-    """
-    print(f"Checking image: {image_path}")
-
-    # Simulated result for prototype
+    """Return an explicit unavailable result until a real CV model is configured."""
     return {
-        "id_detected": True,
-        "confidence": 0.82,
-        "notes": "Prototype result - replace with real CV model"
+        "id_detected": None,
+        "confidence": None,
+        "notes": f"No detector is configured for {image_path!r}.",
     }

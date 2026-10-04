@@ -1,3 +1,7 @@
 services:
   demo:
     build: .
+    environment:
+      ID_DETECTION_DB_PATH: /app/data/detections.db
+    volumes:
+      - ./data:/app/data

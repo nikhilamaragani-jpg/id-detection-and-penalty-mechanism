@@ -2,7 +2,7 @@
 
 ## 60-second pitch
 
-I modeled an automated ID compliance workflow: detection results feed a rules engine that produces ALLOW / WARNING / REVIEW / PENALTY_PATH outcomes and logs every decision to SQLite. The design matches the academic theme of linking **detection** with **penalty / compliance** mechanisms, while the code stays honest about simulated sensing today.
+I modeled an ID compliance workflow: detection results feed a review-first rules engine that produces ALLOW / WARNING / REVIEW outcomes and logs every decision to SQLite. A small analytics module aggregates outcomes, confidence, and event volume. The design explores the academic theme of linking **detection** with **compliance** mechanisms while staying honest that sensing is simulated today.
 
 ## Demo
 
@@ -13,6 +13,6 @@ python src/main.py
 
 ## Questions
 
-**False positives?** Prefer REVIEW / WARNING before hard penalties.  
+**Missing ID detections?** Route to manual review; do not infer wrongdoing or apply an automatic penalty.
 **Privacy?** Minimize retention of ID/face images if extended to real cameras.  
-**Prototype honesty?** Scenarios are simulated; live CV models are future work.
+**Prototype honesty?** The default detector explicitly reports unavailable; simulated scenarios demonstrate the workflow. Live CV models are future work.

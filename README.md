@@ -72,3 +72,9 @@ MIT · **Author:** Amaragani Nikhil Sai · https://nikhilamaragani-jpg.github.io
 ### Academic report PDF
 
 - **Reference PDF:** [docs/reports/ID_Detection_and_Penalty_Reference_Document.pdf](docs/reports/ID_Detection_and_Penalty_Reference_Document.pdf)
+
+## Portfolio positioning
+
+This is an academic supporting project demonstrating rules, audit logs, SQLite, and structured decisions. The included detector reports unavailable and does not claim image detection or production enforcement.
+
+For the current Data Analyst portfolio, see: https://nikhilamaragani-jpg.github.io/
